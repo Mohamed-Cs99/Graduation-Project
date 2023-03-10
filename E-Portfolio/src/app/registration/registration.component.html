@@ -1,0 +1,110 @@
+<section class="Registeration-sec bg-light py-3">
+  <h1 class="text-center mb-4 "><span class="bg-transparent">Registration</span></h1>
+  <div class="container w-60 regForm py-5 ">
+    <form class="py-2" [formGroup]='registerForm' (ngSubmit)="submitRegisterForm(registerForm)">
+      <div class="form-row ">
+        <div class="col-md-6 form-group-md-4 form-group">
+          <label for="nationalId">National ID</label>
+          <input type="text" class="form-control" formControlName="nationalId" id="nationalId">
+          <div *ngIf="registerForm.get('nationalId')?.errors!=null&&registerForm.get('nationalId')?.touched"
+            class="alert alert-danger mt-1">
+            <p *ngIf="registerForm.get('nationalId')?.errors?.['required']">National ID Is Required</p>
+            <p *ngIf="registerForm.get('nationalId')?.errors?.['pattern']">Please Enter 14 Number</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 form-group">
+          <label for="bDate">Birthdate</label>
+          <input type="date" class="form-control" formControlName="bDate" id="bDate">
+        </div>
+
+      </div>
+      <div class="form-row">
+
+        <div class="col-md-6 form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" formControlName="name" id="name">
+          <div *ngIf="registerForm.get('name')?.errors!=null&&registerForm.get('name')?.touched"
+            class="alert alert-danger mt-1">
+            <p *ngIf="registerForm.get('name')?.errors?.['required']">Name Required Please</p>
+            <p *ngIf="registerForm.get('name')?.errors?.['minlength']">Minimum Length 3</p>
+            <p *ngIf="registerForm.get('name')?.errors?.['maxlength']">Maximum Length 30</p>
+            <p *ngIf="registerForm.get('name')?.errors?.['pattern']">Invalid Name Pattern isn't Corrected </p>
+          </div>
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="gender">Gender</label>
+          <select ngModel="Male" class="form-control" formControlName="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-6 form-group">
+          <label for="userName">Username</label>
+          <input type="text" class="form-control" formControlName="userName" id="userName">
+          <div *ngIf="registerForm.get('userName')?.errors!=null&&registerForm.get('userName')?.touched"
+            class="alert alert-danger mt-1">
+            <p *ngIf="registerForm.get('userName')?.errors?.['required']">User Name Required</p>
+          </div>
+
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="mail">Email</label>
+          <input type="text" class="form-control" formControlName="mail" id="mail">
+          <div *ngIf="registerForm.get('mail')?.errors!=null&&registerForm.get('mail')?.touched"
+            class="alert alert-danger mt-1">
+            <p *ngIf="registerForm.get('mail')?.errors?.['required']">Email Required</p>
+            <p *ngIf="registerForm.get('mail')?.errors?.['email']">Invalid Email</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 form-group">
+          <label for="pass">Password</label>
+          <input type="password" class="form-control" formControlName="pass" id="pass">
+          <div *ngIf="registerForm.get('pass')?.errors!=null&&registerForm.get('pass')?.touched"
+            class="alert alert-danger mt-1">
+            <p *ngIf="registerForm.get('pass')?.errors?.['required']">Password Required</p>
+            <p *ngIf="registerForm.get('pass')?.errors?.['pattern']">In Valid Password , Please Enter From 9-15
+              (Letters Or Numbers)</p>
+          </div>
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="rePass">Confirm Password</label>
+          <input type="password" class="form-control" formControlName="rePass" id="rePass">
+          <div *ngIf="registerForm.get('rePass')?.errors!=null&&registerForm.get('rePass')?.touched"
+            class="alert alert-danger mt-1">
+            <p *ngIf="registerForm.get('rePass')?.errors?.['required']">Confirmation Password Required</p>
+            <p *ngIf="registerForm.get('rePass')?.errors?.['pattern']">In Valid Password , Please Enter From 9-15
+              (Letters Or Numbers)</p>
+           <p>Password and Confirm Password must be match.</p>  
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="offset-4 col-md-4 form-group ">
+          <label for="resYear">Residency Year </label>
+          <select ngModel="1" class="form-control" formControlName="resYear" id="resYear">
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+
+          </select>
+
+        </div>
+      </div>
+      <div class="regbtn-div text-center ">
+        <button id="RegistrBtn"  [disabled]="registerForm.invalid" type="submit" class="my-2 btn btn-dark px-5 regbtn btn-lg">SignUp
+        </button>
+        <button (click)="goToLoginPage()" id="loginBtn" type="button" class="ml-5 btn btn-dark px-5 Login-btn btn-lg"> <a>Login</a></button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+.logbook,.tableHome {
+  font-family: "Work Sans", sans-serif !important;
+  border: 2px solid #d3d3d3;
+  border-radius: 10px;
+}
+
+.logbook ul li {
+  padding: 2px;
+}
+.logbook ul li a {
+  color: rgb(18, 99, 99);
+  font-size: 110%;
+  font-weight: 400;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+.logbook ul li:hover a {
+  color: rgb(71, 70, 70);
+}
+.logbook-link ,.table-link {
+  color: rgb(18, 99, 99);
+  font-size: 110%;
+  font-weight: 400;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+.logbook-link,.table-link:hover {
+  color: rgb(71, 70, 70);
+}
+
+img {
+  border-radius: 50%;
+}
+
