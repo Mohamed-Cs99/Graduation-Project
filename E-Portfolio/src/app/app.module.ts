@@ -10,6 +10,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { IntensiveCareComponent } from './intensive-care/intensive-care.component';
+import { ProcedureComponent } from './procedure/procedure.component';
+import { AnaetheticComponent } from './anaethetic/anaethetic.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     LoginComponent,
     NavbarComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    IntensiveCareComponent,
+    ProcedureComponent,
+    AnaetheticComponent
   ],
   imports: [
     BrowserModule,

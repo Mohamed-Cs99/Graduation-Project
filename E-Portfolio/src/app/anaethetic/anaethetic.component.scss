@@ -1,0 +1,114 @@
+.con {
+    width: 75%;
+    margin: auto;
+    h1 {
+        margin: 25px 0;
+    }
+    form {
+        label {
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            > .form-check {
+                padding: 0;
+                margin: 10px 0;
+            }
+            > .form-select {
+                margin: 10px 0;
+            }
+        }
+        .form-check-inline {
+            padding: 15px 30px;
+            position: relative;
+            width: 300px;
+            border-radius: 5px;
+            background-color: #b8b9bb;
+            transition: .15s ease-in-out;
+            label {
+                position: absolute;
+                width: 80%;
+                height: 100%;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .form-check-inline:hover {
+            background-color: #97989b;
+        }
+        .date {
+            width: 250px;
+        }
+        .time {
+            width: 230px;
+        }
+        .facility {
+            width: 400px;
+        }
+        .sex {
+            width: 150px;
+            label {
+                width: 60%;
+            }
+        }
+        .age {
+            background-color: inherit;
+            width: 120px;
+            padding: 0;
+        }
+        .age:first-child {
+            width: 60px;
+        }
+        .age:last-child {
+            width: 210px;
+        }
+        .asa {
+            width: 120px;
+            label {
+                width: 60%;
+            }
+        }
+        .casePrioty {
+            width: 150px;
+            label {
+                width: 65%;
+            }
+        }
+        .specialty {
+            width: 450px;
+        }
+        .supervision {
+            width: 230px;
+        }
+        .modeAnes{
+            width: 200px;
+            label {
+                width: 75%;
+            }
+        }
+        .regional {
+            width: 500px;
+        }
+        .technique {
+            width: 230px;
+        }
+        .procedure {
+            width: 220px;
+        }
+        .categories {
+            width: 530px;
+        }
+        .yesNo {
+            width: 100px;
+            label {
+                width: 60%;
+            }
+        }
+        .event {
+            width: 50%;
+            height: 100px;
+        }
+    }
+}

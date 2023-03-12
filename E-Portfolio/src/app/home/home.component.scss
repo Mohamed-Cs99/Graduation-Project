@@ -15,6 +15,7 @@
 }
 .logbook ul li:hover a {
   color: rgb(71, 70, 70);
+  cursor: pointer;
 }
 .logbook-link ,.table-link {
   color: rgb(18, 99, 99);
@@ -24,6 +25,7 @@
 }
 .logbook-link,.table-link:hover {
   color: rgb(71, 70, 70);
+  cursor: pointer;
 }
 
 img {
