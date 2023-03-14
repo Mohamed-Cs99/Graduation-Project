@@ -19,19 +19,10 @@ export class RegistrationComponent {
     private _ValidationService:ValidationService
   ) {}
 
-  submitRegisterForm(registerForm: FormGroup) {
-    this._ProjectServiceService
-      .Regiseter(registerForm.value)
-      .subscribe((response) => {
-        if (response.message == 'success') {
-          this._Router.navigate(['/login']);
-        } else {
-        }
-      });
-  }
+ 
   registerForm = new FormGroup(
     {
-    name: new FormControl(null, [
+    Name: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(30),
@@ -39,28 +30,41 @@ export class RegistrationComponent {
         '^[A-Za-z]{3,} [A-Za-z]{3,} [A-Za-z]{3,} [A-Za-z]{3,} ?$'
       ),
     ]),
-    userName: new FormControl(null, [Validators.required]),
-    nationalId: new FormControl(null, [
+    username: new FormControl(null, [Validators.required]),
+    Resident_NID : new FormControl(null, [
       Validators.required,
       Validators.pattern('^[0-9]{14}$'),
     ]),
-    mail: new FormControl(null, [Validators.required, Validators.email]),
-    pass: new FormControl(null, [
+    Email: new FormControl(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [
       Validators.required,
       Validators.pattern('^[A-Za-z0-9]{9,15}$'),
     ]),
-    rePass: new FormControl(null, [
+    confirmationPass: new FormControl(null, [
       Validators.required,
       Validators.pattern('^[A-Za-z0-9]{9,15}$'),
     ]),
 
-    bDate: new FormControl(null, [Validators.required]),
-    resYear: new FormControl(null, [Validators.required]),
-    gender: new FormControl(null, [Validators.required]),
+    Birthdate: new FormControl(null, [Validators.required]),
+    ResidencyYear: new FormControl(null, [Validators.required]),
+    Gender: new FormControl(null, [Validators.required]),
   }
-   ,this._ValidationService.passwordMatch('pass','rePass')
+   ,this._ValidationService.passwordMatch('password','confirmationPass')
   );
-
+  submitRegisterForm(registerForm: FormGroup) {
+    this._ProjectServiceService.Regiseter(registerForm.value).subscribe((response)=>{
+     if(response.message=="User successfully registered")
+     {
+      alert("Successfully Registration"); 
+      this._Router.navigate(['/login']);
+     }
+     else 
+     {
+       alert("Account Already Registered"); 
+     }
+    })
+     
+  }
   goToLoginPage()
   {
     this._Router.navigate(['/login'])

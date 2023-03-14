@@ -4,37 +4,37 @@
     <form class="py-2" [formGroup]='registerForm' (ngSubmit)="submitRegisterForm(registerForm)">
       <div class="form-row ">
         <div class="col-md-6 form-group-md-4 form-group">
-          <label for="nationalId">National ID</label>
-          <input type="text" class="form-control" formControlName="nationalId" id="nationalId">
-          <div *ngIf="registerForm.get('nationalId')?.errors!=null&&registerForm.get('nationalId')?.touched"
+          <label for="Resident_NID">National ID</label>
+          <input type="text" class="form-control" formControlName="Resident_NID" id="Resident_NID">
+          <div *ngIf="registerForm.get('Resident_NID')?.errors!=null&&registerForm.get('Resident_NID')?.touched"
             class="alert alert-danger mt-1">
-            <p *ngIf="registerForm.get('nationalId')?.errors?.['required']">National ID Is Required</p>
-            <p *ngIf="registerForm.get('nationalId')?.errors?.['pattern']">Please Enter 14 Number</p>
+            <p *ngIf="registerForm.get('Resident_NID')?.errors?.['required']">National ID Is Required</p>
+            <p *ngIf="registerForm.get('Resident_NID')?.errors?.['pattern']">Please Enter 14 Number</p>
           </div>
         </div>
 
         <div class="col-md-6 form-group">
-          <label for="bDate">Birthdate</label>
-          <input type="date" class="form-control" formControlName="bDate" id="bDate">
+          <label for="Birthdate">Birthdate</label>
+          <input type="date" class="form-control" formControlName="Birthdate" id="Birthdate">
         </div>
 
       </div>
       <div class="form-row">
 
         <div class="col-md-6 form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" formControlName="name" id="name">
-          <div *ngIf="registerForm.get('name')?.errors!=null&&registerForm.get('name')?.touched"
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" formControlName="Name" id="Name">
+          <div *ngIf="registerForm.get('Name')?.errors!=null&&registerForm.get('Name')?.touched"
             class="alert alert-danger mt-1">
-            <p *ngIf="registerForm.get('name')?.errors?.['required']">Name Required Please</p>
-            <p *ngIf="registerForm.get('name')?.errors?.['minlength']">Minimum Length 3</p>
-            <p *ngIf="registerForm.get('name')?.errors?.['maxlength']">Maximum Length 30</p>
-            <p *ngIf="registerForm.get('name')?.errors?.['pattern']">Invalid Name Pattern isn't Corrected </p>
+            <p *ngIf="registerForm.get('Name')?.errors?.['required']">Name Required Please</p>
+            <p *ngIf="registerForm.get('Name')?.errors?.['minlength']">Minimum Length 3</p>
+            <p *ngIf="registerForm.get('Name')?.errors?.['maxlength']">Maximum Length 30</p>
+            <p *ngIf="registerForm.get('Name')?.errors?.['pattern']">Invalid Name Pattern isn't Corrected </p>
           </div>
         </div>
         <div class="col-md-6 form-group">
-          <label for="gender">Gender</label>
-          <select ngModel="Male" class="form-control" formControlName="gender" id="gender">
+          <label for="Gender">Gender</label>
+          <select ngModel="Male" class="form-control" formControlName="Gender" id="Gender">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
@@ -44,43 +44,43 @@
 
       <div class="form-row">
         <div class="col-md-6 form-group">
-          <label for="userName">Username</label>
-          <input type="text" class="form-control" formControlName="userName" id="userName">
-          <div *ngIf="registerForm.get('userName')?.errors!=null&&registerForm.get('userName')?.touched"
+          <label for="username">Username</label>
+          <input type="text" class="form-control" formControlName="username" id="username">
+          <div *ngIf="registerForm.get('username')?.errors!=null&&registerForm.get('username')?.touched"
             class="alert alert-danger mt-1">
-            <p *ngIf="registerForm.get('userName')?.errors?.['required']">User Name Required</p>
+            <p *ngIf="registerForm.get('username')?.errors?.['required']">User Name Required</p>
           </div>
 
         </div>
         <div class="col-md-6 form-group">
-          <label for="mail">Email</label>
-          <input type="text" class="form-control" formControlName="mail" id="mail">
-          <div *ngIf="registerForm.get('mail')?.errors!=null&&registerForm.get('mail')?.touched"
+          <label for="Email">Email</label>
+          <input type="text" class="form-control" formControlName="Email" id="Email">
+          <div *ngIf="registerForm.get('Email')?.errors!=null&&registerForm.get('Email')?.touched"
             class="alert alert-danger mt-1">
-            <p *ngIf="registerForm.get('mail')?.errors?.['required']">Email Required</p>
-            <p *ngIf="registerForm.get('mail')?.errors?.['email']">Invalid Email</p>
+            <p *ngIf="registerForm.get('Email')?.errors?.['required']">Email Required</p>
+            <p *ngIf="registerForm.get('Email')?.errors?.['email']">Invalid Email</p>
           </div>
         </div>
 
       </div>
       <div class="form-row">
         <div class="col-md-6 form-group">
-          <label for="pass">Password</label>
-          <input type="password" class="form-control" formControlName="pass" id="pass">
-          <div *ngIf="registerForm.get('pass')?.errors!=null&&registerForm.get('pass')?.touched"
+          <label for="password">password</label>
+          <input type="password" class="form-control" formControlName="password" id="password">
+          <div *ngIf="registerForm.get('password')?.errors!=null&&registerForm.get('password')?.touched"
             class="alert alert-danger mt-1">
-            <p *ngIf="registerForm.get('pass')?.errors?.['required']">Password Required</p>
-            <p *ngIf="registerForm.get('pass')?.errors?.['pattern']">In Valid Password , Please Enter From 9-15
+            <p *ngIf="registerForm.get('password')?.errors?.['required']">Password Required</p>
+            <p *ngIf="registerForm.get('password')?.errors?.['pattern']">Invalid Password , Please Enter From 9-15
               (Letters Or Numbers)</p>
           </div>
         </div>
         <div class="col-md-6 form-group">
-          <label for="rePass">Confirm Password</label>
-          <input type="password" class="form-control" formControlName="rePass" id="rePass">
-          <div *ngIf="registerForm.get('rePass')?.errors!=null&&registerForm.get('rePass')?.touched"
+          <label for="confirmationPass">Confirm Password</label>
+          <input type="password" class="form-control" formControlName="confirmationPass" id="confirmationPass">
+          <div *ngIf="registerForm.get('confirmationPass')?.errors!=null&&registerForm.get('confirmationPass')?.touched"
             class="alert alert-danger mt-1">
-            <p *ngIf="registerForm.get('rePass')?.errors?.['required']">Confirmation Password Required</p>
-            <p *ngIf="registerForm.get('rePass')?.errors?.['pattern']">In Valid Password , Please Enter From 9-15
+            <p *ngIf="registerForm.get('confirmationPass')?.errors?.['required']">Confirmation Password Required</p>
+            <p *ngIf="registerForm.get('confirmationPass')?.errors?.['pattern']">In Valid Password , Please Enter From 9-15
               (Letters Or Numbers)</p>
            <p>Password and Confirm Password must be match.</p>  
 
@@ -90,8 +90,8 @@
 
       <div class="form-row">
         <div class="offset-4 col-md-4 form-group ">
-          <label for="resYear">Residency Year </label>
-          <select ngModel="1" class="form-control" formControlName="resYear" id="resYear">
+          <label for="ResidencyYear">Residency Year </label>
+          <select ngModel="1" class="form-control" formControlName="ResidencyYear" id="ResidencyYear">
             <option selected value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

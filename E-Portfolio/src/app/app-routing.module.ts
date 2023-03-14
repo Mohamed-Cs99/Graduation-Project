@@ -1,3 +1,4 @@
+import { AuthguardGuard } from './authguard.guard';
 import { AnaetheticComponent } from './anaethetic/anaethetic.component';
 import { IntensiveCareComponent } from './intensive-care/intensive-care.component';
 import { NgModule } from '@angular/core';
@@ -10,12 +11,12 @@ import { ProcedureComponent } from './procedure/procedure.component';
 
 const routes: Routes = [
  {path:'',redirectTo:'login',pathMatch:'full'},
- {path:'home',component:HomeComponent},
+ {path:'home',canActivate:[AuthguardGuard],component:HomeComponent},
  {path:'registration',component:RegistrationComponent},
  {path:'login',component:LoginComponent},
- {path:'intensiveCare',component:IntensiveCareComponent},
- {path:'procedure',component:ProcedureComponent},
- {path:'anaethetic',component:AnaetheticComponent},
+ {path:'intensiveCare',canActivate:[AuthguardGuard],component:IntensiveCareComponent},
+ {path:'procedure',canActivate:[AuthguardGuard],component:ProcedureComponent},
+ {path:'anaethetic',canActivate:[AuthguardGuard],component:AnaetheticComponent},
  {path:'**',component:NotfoundComponent},
 
 ];

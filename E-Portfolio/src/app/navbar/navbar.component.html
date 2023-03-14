@@ -9,13 +9,13 @@
                     <img src="../../assets/images/OIP.jpeg" alt="AinShams">
                 </div>
             </div>
-            <div class="col-md-7 offset-md-2">
+            <div class="col-md-4 offset-md-5">
                 <div class="nav-list">
                     <ul class="list-unstyled d-flex justify-content-between align-items-center py-2 mb-0 mt-1">
-                        <li><a routerLink="home">Home</a></li>
-                        <li><a routerLink="login">Login</a></li>
-                        <li><a routerLink="registration">Register</a></li>
-                        <li><a >LogOut</a></li>
+                        <li><a *ngIf="isLogin" routerLink="home">Home</a></li>
+                        <li><a *ngIf="!isLogin" routerLink="login">Login</a></li>
+                        <li><a *ngIf="!isLogin" routerLink="registration">Register</a></li>
+                        <li><a *ngIf="isLogin">LogOut</a></li>
 
                     </ul>
                 </div>

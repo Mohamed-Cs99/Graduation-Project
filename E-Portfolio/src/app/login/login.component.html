@@ -1,29 +1,32 @@
-<section id="logIn" class="pt-3 log-in vh-100">
+<section  id="logIn" class="pt-3 log-in bg-light vh-100">
 
     <h1 class="text-center bg-light w-25  text-black m-auto py-2">Login</h1>
 
     <div class="w-35 logIn-div py-4 mx-auto w-35 mt-5">
+         <div *ngIf="loginError" class="alert alert-danger">
+            <p>{{loginError}}</p>
+        </div> 
         <form [formGroup]='loginForm' (ngSubmit)="submitLoginForm(loginForm)">
 
             <div class="form-row py-4">
                 <div class="col-md-12">
-                    <label for="userName">UserName</label>
-                    <input type="text" class="form-control w-75 m-auto" formControlName="userName" id="userName">
-                    <div  *ngIf="loginForm.get('userName')?.errors!=null&&loginForm.get('userName')?.touched"
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control w-75 m-auto" formControlName="username" id="username">
+                    <div  *ngIf="loginForm.get('username')?.errors!=null&&loginForm.get('username')?.touched"
                         class="alert w-75 m-auto alert-danger mt-1 py-0">
-                        <p *ngIf="loginForm.get('userName')?.errors?.['required']">User Name Required</p>
+                        <p *ngIf="loginForm.get('username')?.errors?.['required']">User Name Required</p>
                     </div>
                 </div>
 
             </div>
             <div class="form-row py-4">
                 <div class="col-md-12">
-                    <label for="pass">Password</label>
-                    <input type="password" class="form-control w-75 m-auto" formControlName="pass" id="pass">
-                    <div *ngIf="loginForm.get('pass')?.errors!=null&&loginForm.get('pass')?.touched"
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control w-75 m-auto" formControlName="password" id="password">
+                    <div *ngIf="loginForm.get('password')?.errors!=null&&loginForm.get('password')?.touched"
                         class="alert w-75 m-auto alert-danger mt-1 py-0">
-                        <p *ngIf="loginForm.get('pass')?.errors?.['required']">Password Required</p>
-                        <p *ngIf="loginForm.get('pass')?.errors?.['pattern']">InValid Password , Please Enter From
+                        <p *ngIf="loginForm.get('password')?.errors?.['required']">password Required</p>
+                        <p *ngIf="loginForm.get('password')?.errors?.['pattern']">InValid password , Please Enter From
                             9-15
                             (Letters Or Numbers)</p>
                     </div>
@@ -32,8 +35,8 @@
             </div>
 
             <div class="logIn-btn-div w-75 m-auto">
-                <button [disabled]="loginForm.invalid" type="submit" (click)="goToHomePage()" type="button"
-                    class="m-2 btn btn-dark px-5 Login-btn regbtn btn-lg"><a>Login</a></button>
+                <button [disabled]="loginForm.invalid" type="submit" 
+                    class="m-2 btn btn-dark px-5 Login-btn regbtn btn-lg">Login</button>
                 <button (click)="goToRegisterPage()" type="button" class="m-2 btn btn-dark px-5 Register-btn btn-lg">
                     <a>SignUp</a></button>
             </div>

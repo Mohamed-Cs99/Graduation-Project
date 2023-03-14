@@ -1,34 +1,34 @@
 .log-in {
-    background-image: url(../../assets/images/2154cd17b398cf202ab361615fe313af.jpg);
-    background-size: cover;
-    background-position: center center;
+  // background-image: url(../../assets/images/2154cd17b398cf202ab361615fe313af.jpg);
+  // background-size: cover;
+  // background-position: center center;
+  font-family: "Work Sans", sans-serif !important;
 }
 
 .log-in h1 {
-    font-weight: 700;
-    border: 3px solid #f3f3f3;
-    border-radius: 5px;
+  font-weight: 700;
+  border: 3px solid #f3f3f3;
+  border-radius: 5px;
 }
 
 .logIn-div {
-    text-align: center;
-    border: 2px solid #f3f3f3;
-    border-radius: 12px;
-    background-color: rgba(48, 241, 255, 0.3);
+  text-align: center;
+  border: 2px solid #f3f3f3;
+  border-radius: 12px;
+  background-color: rgba(83, 85, 85, 0.3);
 }
 
 .logIn-div label {
-    font-size: 120%;
-    font-weight: 600;
-    color: rgb(0, 15, 97);
+  font-size: 120%;
+  font-weight: 600;
+  color: rgb(0, 15, 97);
 }
 
 .btn a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
-.w-35
-{
-    width: 35%;
+.w-35 {
+  width: 35%;
 }
