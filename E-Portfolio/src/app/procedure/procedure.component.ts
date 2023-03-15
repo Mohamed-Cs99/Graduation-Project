@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProjectServiceService } from '../project-service.service';
 
 @Component({
   selector: 'app-procedure',
@@ -6,6 +7,40 @@ import { Component } from '@angular/core';
   styleUrls: ['./procedure.component.scss']
 })
 export class ProcedureComponent {
+  timeData: any[] = [];
+  AgeCategory: any[] = [];
+  AgeUnits: any[] = [];
+  Supervision: any[] = [];
+  SupervisorRole: any[] = [];
+  CoreSkill: any[] = [];
+  CoreSkillCategory: any[] = [];
+  Facility:any[]=[]; 
+  Specialty:any[]=[]; 
+ constructor(private _ProjectServiceService:ProjectServiceService)
+ {
+  this._ProjectServiceService.getSharedData().subscribe((data)=>{
+    this.timeData = data.Time;
+      //console.log(this.timeData);
+      this.AgeCategory = data.AgeCategory;
+      //console.log(this.AgeCategory);
+      this.AgeUnits = data.AgeUnits;
+      //console.log(this.AgeUnits);
+      this.Supervision = data.Supervision;
+      //console.log(this.Supervision);
+      this.SupervisorRole = data.SupervisorRole;
+      //console.log(this.SupervisorRole);
+      this.CoreSkill = data.CoreSkill;
+      //console.log(this.CoreSkill);
+      this.CoreSkillCategory = data.CoreSkillCategory;
+      // console.log(this.CoreSkillCategory);
+  })
+
+  this._ProjectServiceService.getProcedurData().subscribe((data)=>{
+   this.Facility=data.Facility;   
+   this.Specialty=data.Specialty;  
+  })
+ }
+
   dt:Date | undefined;
 
   specialties:string[] = [

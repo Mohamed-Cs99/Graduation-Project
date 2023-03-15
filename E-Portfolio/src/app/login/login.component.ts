@@ -24,13 +24,13 @@ export class LoginComponent {
   submitLoginForm(loginForm: FormGroup) {
     this._ProjectServiceService.Login(loginForm.value).subscribe((response) => {
       if (response.error == 'Unauthorized') {
-        console.log('Unauthorized Account');
+        alert('Unauthorized Account');
       } else if (response.user.pending == 0) {
         localStorage.setItem("userToken",response.access_token);
         this._ProjectServiceService.saveCurrentUser();
         this._Router.navigate(['/home']);
       } else if (response.user.pending == 1) {
-        console.log('Account is Pending');
+        alert('Account is Pending');
       }
 
       //  else h3ml error Message ... bs kda

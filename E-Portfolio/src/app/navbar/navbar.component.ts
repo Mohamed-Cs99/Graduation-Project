@@ -21,4 +21,9 @@ export class NavbarComponent {
       }
     });
   }
+
+  isLogout()
+  {
+    this._ProjectServiceService.Logout();
+  }
 }

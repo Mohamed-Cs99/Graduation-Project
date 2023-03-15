@@ -1,154 +1,162 @@
 <div class="con">
     <form action="">
-        <h1>Procedure</h1>
+        <h1 class="text-center py-2"><span class="bg-transparent font-weight-bolder"> Procedure</span></h1>
 
-        <div class="form-group">
-            <label for="">Procedure ID</label>
-            <input type="text" class="form-control-plaintext" value="1">
-        </div>
-
-        <div class="form-group">
-            <label for="">Date</label>
-            <input type="date" class="form-control date" [max]="dt |  date:'MM/dd/yyyy'">
-        </div>
-
-        <div class="form-group">
-            <label for="">Time</label>
-            <div class="form-check">
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v1"><label for="v1">Morning
-                        [08:00-13:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v2"><label for="v2">Afternoon
-                        [13:00-18:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v3"><label for="v3">Evening
-                        [18:00-22:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v4"><label for="v4">Night
-                        [22:00-08:00]</label>
+        <div class="row py-2 py-2">
+            <div class="col">
+                <div class="form-group py-3">
+                    <label for="">Date</label>
+                    <input type="date" class="form-control date" [max]="dt |  date:'MM/dd/yyyy'">
                 </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <label for="">Facility</label>
-            <select class="form-select facility">
-                <option disabled selected value> -- select a Facility -- </option>
-                <option value="1">Ain Shams University Specialized Hospital; OT</option>
-                <option value="2">Assembled operating theater (OT)</option>
-                <option value="3">Cardiothoracic Academy OT</option>
-                <option value="4">EL Obour Specialized Hospital; OT</option>
-                <option value="5">Emergency OT</option>
-                <option value="6">Endoscopy OT; adult and pediatric</option>
-                <option value="7">Obstetric and gynecological OT</option>
-                <option value="8">Ophthalmic OT</option>
-                <option value="9">Pediatric surgery OT</option>
-                <option value="10">Preoperative assessment clinic</option>
-                <option value="11">Remote areas: Cardiac catheterization</option>
-                <option value="12">Remote areas: Interventional Radiology</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="">Sex</label>
-            <div class="form-check">
-                <div class="form-check form-check-inline sex">
-                    <input type="radio" name="sex" class="form-check-input" id="male"><label for="male">Male</label>
-                </div>
-                <div class="form-check form-check-inline sex">
-                    <input type="radio" name="sex" class="form-check-input" id="female"><label
-                        for="female">Female</label>
+            <div class="col">
+                <div class="form-group">
+                    <label for="">Sex</label>
+                    <div class="form-check">
+                        <div class="form-check form-check-inline sex">
+                            <input value="M" type="radio" name="sex" class="form-check-input" id="male"><label
+                                for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline sex">
+                            <input value="F" type="radio" name="sex" class="form-check-input" id="female"><label
+                                for="female">Female</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <label for="">Age</label>
-            <div class="form-check">
-                <div class="form-check form-check-inline age">
-                    <input type="text" class="form-control" placeholder="Age">
-                </div>
-                <div class="form-check form-check-inline age">
-                    <select class="form-select">
-                        <option disabled selected value> -- Units -- </option>
-                        <option value="hours">hours</option>
-                        <option value="days">days</option>
-                        <option value="weeks">weeks</option>
-                        <option value="months">months</option>
-                        <option value="years">years</option>
-                    </select>
-                </div>
-                <div class="form-check form-check-inline age">
-                    <select class="form-select">
-                        <option disabled selected value> -- select a category -- </option>
-                        <option value="Neonate &lt; 4 weeks">Neonate &lt; 4 weeks</option>
-                        <option value="Infant 1 mos-2 yrs">Infant 1 mos-2 yrs</option>
-                        <option value="Child 2 yrs-12 yrs">Child 2 yrs-12 yrs</option>
-                        <option value="Adolescent 12 yrs-17 yrs">Adolescent 12 yrs-17 yrs</option>
-                        <option value="Adult 18-yrs-64 yrs">Adult 18-yrs-64 yrs</option>
-                        <option value="Geriatrics &gt; 65 yrs">Geriatrics &gt; 65 yrs</option>
+            <div class="col">
+                <div class="form-group">
+                    <label for="">Facility</label>
+                    <select class="form-select facility form-control">
+                        <option disabled selected value> -- select a Facility -- </option>
+                        <option *ngFor="let fac of Facility" value="fac.ID">{{fac.Facility_Name}}</option>
                     </select>
                 </div>
             </div>
+
         </div>
 
-        <div class="form-group">
-            <label for="">Specialty</label>
-            <select class="form-select supervision">
-                <option disabled selected value> -- select a Category -- </option>
-                <option value="Anesthesia">Anesthesia</option>
-                <option value="Intensive care">Intensive care</option>
-                <option value="Pain">Pain</option>
-                <option value="Ward">Ward</option>
-                <option value="Emergency">Emergency</option>
-                <option value="Other">Other</option>
-            </select>
+        <div class="row py-2">
+            <div class="col">
+                <div class="form-group">
+                    <label for="">Time</label>
+                    <div class="form-check">
+                        <div>
+                            <div *ngFor="let time of timeData" class="form-check form-check-inline time">
+                                <input type="radio" name="time" class="form-check-input" value="{{time.ID}}"
+                                    id="{{time.ID}}">
+                                <label for="{{time.ID}}">
+                                    {{time.Details}}
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="">Procedure</label>
-            <select #Procedure class="form-select procedure" (change)="showCategories(Procedure.value)">
-                <option disabled selected value> -- select a Procedure -- </option>
-                <option value="Airway Management">Airway Management</option>
-                <option value="Breathing">Breathing</option>
-                <option value="Circulation">Circulation</option>
-                <option value="Other procedures">Other procedures</option>
-            </select>
+        <div class="row py-2">
+            <div class="col">
+
+                <div class="form-group">
+                    <label for="">Age</label>
+                    <div class="form-check">
+                        <div class="form-check form-check-inline age">
+                            <input type="text" class="form-control" placeholder="Age">
+                        </div>
+                        <div class="form-check form-check-inline age">
+                            <select class="form-select form-control">
+                                <option disabled selected value> -- Units -- </option>
+                                <option *ngFor="let age of AgeUnits" value="{{age.ID}}">{{age.Unit}}</option>
+                            </select>
+                        </div>
+                        <div class="form-check form-check-inline age">
+                            <select class="form-select form-control">
+                                <option disabled selected value> -- select a category -- </option>
+                                <option *ngFor="let ageCat of AgeCategory" value="{{ageCat.ID}}">{{ageCat.Category}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="">Facility</label>
+                    <select class="form-select facility form-control">
+                        <option disabled selected value> -- select a Facility -- </option>
+                        <option *ngFor="let fac of Facility" value="fac.ID">{{fac.Facility_Name}}</option>
+
+                    </select>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group" *ngIf="categories">
-            <label for="">Categories</label>
-            <select class="form-select categories">
-                <option disabled selected value> -- select a Category -- </option>
-                <option *ngFor="let category of categories">{{category}}</option>
-            </select>
+
+        <div class="row py-2">
+            <div class="col">
+                <div class="form-group">
+                    <label for="">Specialty</label>
+                    <select class="form-select supervision form-control">
+                        <option disabled selected value> -- select a Category -- </option>
+                        <option *ngFor="let spec of Specialty" value="{{spec.ID}}">{{spec.Specialty}}</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="">Procedure</label>
+                    <select #Procedure class="form-select procedure form-control"
+                        (change)="showCategories(Procedure.value)">
+                        <option disabled selected value> -- select a Procedure -- </option>
+                        <option *ngFor="let coreSkill of CoreSkill" value="{{coreSkill.ID}}">{{coreSkill.Skill}}
+                        </option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group" *ngIf="categories">
+                    <label for="">Categories</label>
+                    <select class="form-select categories">
+                        <option disabled selected value> -- select a Category -- </option>
+                        <option *ngFor="let category of categories">{{category}}</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="">Supervision</label>
-            <select #supervision class="form-select supervision" (change)="showSupervisor(supervision.value)">
-                <option disabled selected value> -- select a Supervision -- </option>
-                <option value="Immediate">Immediate</option>
-                <option value="Local">Local</option>
-                <option value="Distant">Distant</option>
-                <option value="Solo">Solo</option>
-            </select>
-        </div>
 
-        <div class="form-group" *ngIf="supervisor">
-            <label for="">Supervisor</label>
-            <select class="form-select supervision">
-                <option disabled selected value> -- select a Supervisor -- </option>
-                <option value="Professor">Professor</option>
-                <option value="Assistant Professor">Assistant Professor</option>
-                <option value="Lecturer">Lecturer</option>
-                <option value="Assistant lecturer">Assistant lecturer</option>
-                <option value="Senior resident">Senior resident</option>
-            </select>
+
+
+
+
+
+        <div class="row py-2">
+
+            <div class="col">
+                <div class="form-group">
+                    <label for="">Supervision</label>
+                    <select #supervision class="form-select supervision form-control"
+                        (change)="showSupervisor(supervision.value)">
+                        <option disabled selected value> -- Select a Supervision -- </option>
+                        <option *ngFor="let sup of Supervision" value="{{sup.Name}}">{{sup.Name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group" *ngIf="supervisor">
+                    <label for="">Supervisor</label>
+                    <select class="form-select supervision form-control">
+                        <option disabled selected value> -- Select a Supervisor Role-- </option>
+                        <option *ngFor="let suprole of SupervisorRole" value="{{suprole.Position}}">{{suprole.Position}}
+                        </option>
+                    </select>
+                </div>
+            </div>
         </div>
 
         <div class="form-group">
@@ -158,8 +166,8 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <input type="button" class="btn btn-dark" value="Save log">
+        <div class="form-group py-2">
+            <button type="submit" class="btn btn-dark">Save Log </button>
         </div>
 
     </form>
