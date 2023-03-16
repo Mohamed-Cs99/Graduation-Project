@@ -101,7 +101,7 @@
         </div>
       </div>
       <div class="regbtn-div text-center ">
-        <button id="RegistrBtn"  [disabled]="registerForm.invalid" type="submit" class="my-2 btn btn-dark px-5 regbtn btn-lg">SignUp
+        <button (click)="alertSuccess()" id="RegistrBtn"  [disabled]="registerForm.invalid" type="submit" class="my-2 btn btn-dark px-5 regbtn btn-lg">SignUp
         </button>
         <button (click)="goToLoginPage()" id="loginBtn" type="button" class="ml-5 btn btn-dark px-5 Login-btn btn-lg"> <a>Login</a></button>
       </div>

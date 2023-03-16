@@ -53,17 +53,19 @@ export class RegistrationComponent {
   );
   submitRegisterForm(registerForm: FormGroup) {
     this._ProjectServiceService.Regiseter(registerForm.value).subscribe((response)=>{
-     if(response.message=="User successfully registered")
+     if(response.message=="fail")
      {
-      alert("Successfully Registration"); 
-      this._Router.navigate(['/login']);
+      alert("Account Already Registered");
+     
      }
-     else 
-     {
-       alert("Account Already Registered"); 
-     }
+    
     })
      
+  }
+  alertSuccess()
+  {
+    alert("Account Successfully Registered");
+    this._Router.navigate(['/login'])
   }
   goToLoginPage()
   {

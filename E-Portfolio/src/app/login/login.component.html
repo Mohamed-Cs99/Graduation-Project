@@ -1,4 +1,4 @@
-<section  id="logIn" class="pt-3 log-in bg-light vh-100">
+<section  id="logIn" class="pt-3 log-in bg-light">
 
     <h1 class="text-center bg-light w-25  text-black m-auto py-2">Login</h1>
 
@@ -14,7 +14,7 @@
                     <input type="text" class="form-control w-75 m-auto" formControlName="username" id="username">
                     <div  *ngIf="loginForm.get('username')?.errors!=null&&loginForm.get('username')?.touched"
                         class="alert w-75 m-auto alert-danger mt-1 py-0">
-                        <p *ngIf="loginForm.get('username')?.errors?.['required']">User Name Required</p>
+                        <p *ngIf="loginForm.get('username')?.errors?.['required']">User Name Required!</p>
                     </div>
                 </div>
 
