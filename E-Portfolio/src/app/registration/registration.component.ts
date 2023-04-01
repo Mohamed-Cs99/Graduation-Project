@@ -55,18 +55,17 @@ export class RegistrationComponent {
     this._ProjectServiceService.Regiseter(registerForm.value).subscribe((response)=>{
      if(response.message=="fail")
      {
-      alert("Account Already Registered");
-     
+      alert("Account Already Registered");  
+     }
+     else 
+     {
+       alert("Account Pending"); 
      }
     
     })
      
   }
-  alertSuccess()
-  {
-    alert("Account Successfully Registered");
-    this._Router.navigate(['/login'])
-  }
+
   goToLoginPage()
   {
     this._Router.navigate(['/login'])

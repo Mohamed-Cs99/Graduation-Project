@@ -46,7 +46,9 @@ export class AnaetheticComponent {
       this.ASAPS = data.ASAPS;
       this.CasePriority = data.CasePriority;
       this.Specialty = data.Specialty;
+      console.log(this.Specialty);
       this.Operation = data.Operation;
+      console.log(this.Operation); 
       this.Teaching = data.Teaching;
       this.ModeOfAnesthesia = data.ModeOfAnesthesia;
       this.Technique = data.Technique;

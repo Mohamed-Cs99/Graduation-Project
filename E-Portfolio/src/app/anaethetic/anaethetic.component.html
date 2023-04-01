@@ -1,102 +1,108 @@
 <div class="con">
     <form action="">
-        <h1 class="text-center py-2"><span class="bg-transparent font-weight-bolder"> Anaethetic Case</span></h1>
+        <h1>Anaesthetic</h1>
 
-        <div class="row py-2">
-            <div class="col">
-                <div class="form-group py-3">
-                    <label for="">Date</label>
-                    <input type="date" class="form-control date" [max]="dt |  date:'MM/dd/yyyy'">
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Sex</label>
-                    <div class="form-check">
-                        <div class="form-check form-check-inline sex">
-                            <input value="M" type="radio" name="sex" class="form-check-input" id="male"><label
-                                for="male">Male</label>
-                        </div>
-                        <div class="form-check form-check-inline sex">
-                            <input value="F" type="radio" name="sex" class="form-check-input" id="female"><label
-                                for="female">Female</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Facility</label>
-                    <select class="form-select facility form-control">
-                        <option disabled selected value> -- select a Facility -- </option>
-                        <option *ngFor="let fac of Facility" value="fac.ID">{{fac.Facility_Name}}</option>
-                    </select>
-                </div>
-            </div>
 
-        </div>
-
-        <div class="row py-2 py-4">
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Time</label>
-                    <div class="form-check">
-                        <div class="">
-                            <div *ngFor="let time of timeData" class=" form-check-inline time my-2 ">
-                                <input type="radio" name="time" class="form-check-input " value="{{time.ID}}"
-                                    id="{{time.ID}}">
-                                <label for="{{time.ID}}">
-                                    {{time.Details}}
-                                </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row py-2 py-4">
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Age</label>
-                    <div class="form-check">
-                        <div class="form-check form-check-inline age">
-                            <input type="text" class="form-control" placeholder="Age">
-                        </div>
-                        <div class="form-check form-check-inline age">
-                            <select class="form-select form-control">
-                                <option disabled selected value> -- Units -- </option>
-                                <option *ngFor="let age of AgeUnits" value="{{age.ID}}">{{age.Unit}}</option>
-                            </select>
-                        </div>
-                        <div class="form-check form-check-inline age">
-                            <select class="form-select form-control">
-                                <option disabled selected value> -- select a category -- </option>
-                                <option *ngFor="let ageCat of AgeCategory" value="{{ageCat.ID}}">{{ageCat.Category}}
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="">ASA-PS classsification</label>
-                    <div class="form-check">
-                        <select class="form-select form-control w-100">
-                            <option disabled selected value> -- select a category -- </option>
-                            <option *ngFor="let asa of ASAPS" value="{{asa.ID}}">{{asa.Class}}</option>
-                        </select>
-
-                    </div>
-                </div>
-            </div>
-
+        <div class="form-group">
+            <label for="">Date</label>
+            <input type="date" class="form-control date" [max]="dt |  date:'MM/dd/yyyy'">
         </div>
 
         <div class="form-group">
-            <label for="">Case priority</label>
+            <label for="">Time</label>
+            <div class="form-check">
+                <div *ngFor="let time of timeData" class=" form-check-inline time my-2 ">
+                    <input type="radio" name="time" class="form-check-input " value="{{time.ID}}" id="{{time.ID}}">
+                    <label for="{{time.ID}}">
+                        {{time.Details}}
+                    </label>
+                </div>
+                <!-- <div class="form-check form-check-inline time">
+                    <input type="radio" name="time" class="form-check-input" id="v2"><label for="v2">Afternoon
+                        [13:00-18:00]</label>
+                </div>
+                <div class="form-check form-check-inline time">
+                    <input type="radio" name="time" class="form-check-input" id="v3"><label for="v3">Evening
+                        [18:00-22:00]</label>
+                </div>
+                <div class="form-check form-check-inline time">
+                    <input type="radio" name="time" class="form-check-input" id="v4"><label for="v4">Night
+                        [22:00-08:00]</label>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Facility</label>
+            <select class="form-select facility">
+                <option disabled selected value> -- select a Facility -- </option>
+                <option *ngFor="let fac of Facility" value="fac.ID">{{fac.Facility_Name}}</option>
+                <!-- <option disabled selected value> -- select a Facility -- </option>
+                <option value="1">Ain Shams University Specialized Hospital; OT</option>
+                <option value="2">Assembled operating theater (OT)</option>
+                <option value="3">Cardiothoracic Academy OT</option>
+                <option value="4">EL Obour Specialized Hospital; OT</option>
+                <option value="5">Emergency OT</option>
+                <option value="6">Endoscopy OT; adult and pediatric</option>
+                <option value="7">Obstetric and gynecological OT</option>
+                <option value="8">Ophthalmic OT</option>
+                <option value="9">Pediatric surgery OT</option>
+                <option value="10">Preoperative assessment clinic</option>
+                <option value="11">Remote areas: Cardiac catheterization</option>
+                <option value="12">Remote areas: Interventional Radiology</option> -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="">Sex</label>
+            <div class="form-check">
+                <div class="form-check form-check-inline sex">
+                    <input type="radio" name="sex" class="form-check-input" id="male"><label for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline sex">
+                    <input type="radio" name="sex" class="form-check-input" id="female"><label
+                        for="female">Female</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Age</label>
+            <div class="form-check">
+                <div class="form-check form-check-inline age">
+                    <input type="text" class="form-control" placeholder="Age">
+                </div>
+                <div class="form-check form-check-inline age">
+                    <select class="form-select">
+                        <option disabled selected value> -- Units -- </option>
+                        <option *ngFor="let age of AgeUnits" value="{{age.ID}}">{{age.Unit}}</option>
+
+                    </select>
+                </div>
+                <div class="form-check form-check-inline age">
+                    <select class="form-select">
+                        <option disabled selected value> -- select a category -- </option>
+                        <option *ngFor="let ageCat of AgeCategory" value="{{ageCat.ID}}">{{ageCat.Category}}
+                        </option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">ASA-PS classsification</label>
+            <div class="form-check">
+                <div *ngFor="let asa of ASAPS" class="form-check form-check-inline asa">
+                    <input value="{{asa.ID}}" type="radio" name="asa" class="form-check-input" id="{{asa.ID}}"><label
+                        for="{{asa.ID}}">{{asa.Class}}</label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Case Priority</label>
             <div class="form-check">
                 <div *ngFor="let case of CasePriority" class="form-check form-check-inline casePrioty">
                     <input type="radio" name="casePrioty" class="form-check-input" id="{{case.ID}}"><label
@@ -105,209 +111,303 @@
 
             </div>
         </div>
-        <div class="row py-2 py-4">
-            <div class="col">
-                <div class="form-group">
-                    <label for="">The Primary Specialty</label>
-                    <select #specialty class="form-select specialty form-control "
-                        (change)="showSpecialty(specialty.value, 1)">
-                        <option disabled selected value> -- select a Speciality -- </option>
-                        <option *ngFor="let spec of Specialty" value="{{spec.ID}}">{{spec.Specialty}}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Type of Operation</label>
-                    <select class="form-select specialty form-control">
-                        <option disabled selected value> -- select an Operation -- </option>
-                        <option *ngFor="let op of Operation">{{op.Operation_Title}}</option>
-                    </select>
-                </div>
 
-            </div>
+        <div class="form-group">
+            <label for="">The Primary Specialty</label>
+            <select #specialty class="form-select specialty" (change)="showSpecialty(specialty.value, 1)">
+                <option disabled selected value> -- select a Speciality -- </option>
+                <option *ngFor="let spec of Specialty" value="{{spec.Specialty}}">{{spec.Specialty}}</option>
+            </select>
         </div>
 
-        <div class="row py-2">
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Secondary Specialty if present?</label>
-                    <div class="form-check">
-                        <div class="form-check form-check-inline yesNo">
-                            <span (click)="setYes(1)">
-                                <input type="radio" name="secondarySpecialty" class="form-check-input"
-                                    id="yesSecondary"><label for="yesSecondary">Yes</label>
-                            </span>
-                        </div>
-                        <div class="form-check form-check-inline yesNo">
-                            <span (click)="setNo(1)">
-                                <input type="radio" name="secondarySpecialty" class="form-check-input"
-                                    id="noSecondary"><label for="noSecondary">No</label>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div class="form-group">
+            <label for="">Type of the operation</label>
+            <select class="form-select specialty">
+               
+                <option disabled selected value> -- select an Operation -- </option>
+                <option *ngFor="let op of Operation">{{op.Operation_Title}}</option>
+            </select>
         </div>
 
-        <div class="row py-2" *ngIf="secondarySpecialty">
-            <div class="col">
-                <div class="form-group">
-                    <label for="">The Secondary Specialty</label>
-                    <select #secondarySpecialty class="form-select specialty form-control"
-                        (change)="showSpecialty(secondarySpecialty.value, 2)">
-                        <option disabled selected value> -- select a Secondary Specialty -- </option>
-                        <option *ngFor="let specialty of Specialty">{{specialty.Specialty}}</option>
-                    </select>
+        <div class="form-group">
+            <label for="">Secondary Specialty if present?</label>
+            <div class="form-check">
+                <div class="form-check form-check-inline yesNo">
+                    <span (click)="setYes(1)">
+                        <input type="radio" name="secondarySpecialty" class="form-check-input" id="yesSecondary"><label
+                            for="yesSecondary">Yes</label>
+                    </span>
                 </div>
-            </div>
-            <div class="col">
-                <div class="form-group" *ngIf="secondaryOptions">
-                    <label for="">Type of Operation</label>
-                    <select class="form-select specialty form-control">
-                        <option disabled selected value> -- select an Operation -- </option>
-                        <option *ngFor="let op of Operation">{{op.Operation_Title}}</option>
-                    </select>
+                <div class="form-check form-check-inline yesNo">
+                    <span (click)="setNo(1)">
+                        <input type="radio" name="secondarySpecialty" class="form-check-input" id="noSecondary"><label
+                            for="noSecondary">No</label>
+                    </span>
                 </div>
             </div>
         </div>
 
-        <div class="row py-2">
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Supervision</label>
-                    <select #supervision class="form-select supervision form-control"
-                        (change)="showSupervisor(supervision.value)">
-                        <option disabled selected value> -- Select a Supervision -- </option>
-                        <option *ngFor="let sup of Supervision" value="{{sup.Name}}">{{sup.Name}}</option>
-                    </select>
-                </div>
-
+        <div *ngIf="secondarySpecialty">
+            <div class="form-group">
+                <label for="">The Secondary Specialty</label>
+                <select #secondarySpecialty class="form-select specialty"
+                    (change)="showSpecialty(secondarySpecialty.value, 2)">
+                    <option disabled selected value> --Select a Secondary Specialty -- </option>
+                    <option *ngFor="let specialty of Specialty">{{specialty.Specialty}}</option>
+                   
+                </select>
             </div>
-            <div class="col">
-                <div class="form-group" *ngIf="supervisor">
-                    <label for="">Supervisor</label>
-                    <select class="form-select supervision form-control">
-                        <option disabled selected value> -- Select a Supervisor Role-- </option>
-                        <option *ngFor="let suprole of SupervisorRole" value="{{suprole.Position}}">{{suprole.Position}}
-                        </option>
-                    </select>
-                </div>
 
+            <div class="form-group" *ngIf="Operation">
+                <label for="">Type of the operation</label>
+                <select class="form-select specialty">
+                    <option disabled selected value> -- select an Operation -- </option>
+                    <option *ngFor="let op of Operation">{{op.Operation_Title}}</option>
+                  
+                </select>
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="">Supervision</label>
+            <select #supervision class="form-select supervision" (change)="showSupervisor(supervision.value)">
+                <option disabled selected value> -- Select a Supervision -- </option>
+                <option *ngFor="let sup of Supervision" value="{{sup.Name}}">{{sup.Name}}</option>
+                <!-- <option disabled selected value> -- select a Supervision -- </option>
+                <option value="Immediate">Immediate</option>
+                <option value="Local">Local</option>
+                <option value="Distant">Distant</option>
+                <option value="Solo">Solo</option> -->
+            </select>
+        </div>
+
+        <div class="form-group" *ngIf="supervisor">
+            <label for="">Supervisor</label>
+            <select class="form-select supervision">
+                <option disabled selected value> -- Select a Supervisor Role-- </option>
+                <option *ngFor="let suprole of SupervisorRole" value="{{suprole.Position}}">{{suprole.Position}}
+                </option>
+                <!-- <option disabled selected value> -- select a Supervisor -- </option>
+                <option value="Professor">Professor</option>
+                <option value="Assistant Professor">Assistant Professor</option>
+                <option value="Lecturer">Lecturer</option>
+                <option value="Assistant lecturer">Assistant lecturer</option>
+                <option value="Senior resident">Senior resident</option> -->
+            </select>
+        </div>
 
         <div class="form-group">
             <label for="">Teaching</label>
             <div class="form-check">
-                <select class="form-select teaching form-control w-50">
-                    <option disabled selected value> -- Select a Teaching -- </option>
-                    <option *ngFor="let tech of Teaching" value="{{tech.ID}}">{{tech.Title}}
-                    </option>
+                <div *ngFor="let tech of Teaching" class="form-check form-check-inline">
+                    <input value="{{tech.ID}}" type="radio" name="teaching" class="form-check-input" id="tech.ID"><label
+                        for="ums">{{tech.Title}}</label>
+                </div>
+                <!-- <div class="form-check form-check-inline">
+                    <input type="radio" name="teaching" class="form-check-input" id="house"><label for="house">House
+                        officer</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="teaching" class="form-check-input" id="resident"><label
+                        for="resident">Resident</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="teaching" class="form-check-input" id="fellow"><label
+                        for="fellow">Fellow</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="teaching" class="form-check-input" id="msc"><label for="msc">Postgraduate
+                        student, MSc</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="teaching" class="form-check-input" id="md"><label for="md">Postgraduate
+                        student, MD</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="teaching" class="form-check-input" id="assistant"><label
+                        for="assistant">Assistant lecturer</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="teaching" class="form-check-input" id="consultant"><label
+                        for="consultant">Consultant</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="teaching" class="form-check-input" id="none"><label
+                        for="none">None</label>
+                </div> -->
+            </div>
+        </div>
 
+        <div class="form-group">
+            <label for="">Mode of anesthesia</label>
+            <div class="form-check">
+                <div class="form-check form-check-inline modeAnes">
+                    <input type="radio" name="modeAnes" class="form-check-input" id="mac"><label for="mac">MAC</label>
+                </div>
+                <div class="form-check form-check-inline modeAnes">
+                    <input type="radio" name="modeAnes" class="form-check-input" id="openMask"><label for="openMask">GA
+                        open mask</label>
+                </div>
+                <div class="form-check form-check-inline modeAnes">
+                    <input type="radio" name="modeAnes" class="form-check-input" id="lma"><label for="lma">GA
+                        LMA</label>
+                </div>
+                <div class="form-check form-check-inline modeAnes">
+                    <input type="radio" name="modeAnes" class="form-check-input" id="ett"><label for="ett">GA
+                        ETT</label>
+                </div>
+                <div class="form-check form-check-inline modeAnes">
+                    <input type="radio" name="modeAnes" class="form-check-input" id="tiva"><label for="tiva">GA
+                        TIVA</label>
+                </div>
+                <div class="form-check form-check-inline modeAnes">
+                    <input type="radio" name="modeAnes" class="form-check-input" id="regional"><label
+                        for="regional">Regional anesthesia</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Regional anesthesia</label>
+            <div class="form-check">
+                <div class="form-check form-check-inline yesNo">
+                    <span (click)="setYes(2)">
+                        <input type="radio" name="Regional" class="form-check-input" id="yesRegional"><label
+                            for="yesRegional">Yes</label>
+                    </span>
+                </div>
+                <div class="form-check form-check-inline yesNo">
+                    <span (click)="setNo(2)">
+                        <input type="radio" name="Regional" class="form-check-input" id="noRegional"><label
+                            for="noRegional">No</label>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="regional">
+            <div class="form-group">
+                <label for="">Regional type</label>
+                <select class="form-select regional">
+                    <option disabled selected value> -- select the type -- </option>
+                    <option *ngFor="let reg of RegionalType" value="reg.ID">{{reg.Procedure}}</option>
+                    <!-- <option disabled selected value> -- select the type -- </option>
+                    <option value="Spinal">Spinal</option>
+                    <option value="Lumbar puncture">Lumbar puncture</option>
+                    <option value="Epidural (lumbar)">Epidural (lumbar)</option>
+                    <option value="Epidural (thoracic)">Epidural (thoracic)</option>
+                    <option value="Combined spinal epidural (CSE)">Combined spinal epidural (CSE)</option>
+                    <option value="Caudal block">Caudal block</option>
+                    <option value="Brachial plexus block (interscalene)">Brachial plexus block (interscalene)</option>
+                    <option value="rachial plexus block (supraclavicular)">rachial plexus block (supraclavicular)
+                    </option>
+                    <option value="rachial plexus block (infraclavicular)">rachial plexus block (infraclavicular)
+                    </option>
+                    <option value="rachial plexus block (axillary)">rachial plexus block (axillary)</option>
+                    <option value="Elbow block">Elbow block</option>
+                    <option value="Wrist block">Wrist block</option>
+                    <option value="Digital block">Digital block</option>
+                    <option value="Paravertebral block, Thoracic">Paravertebral block, Thoracic</option>
+                    <option value="Paravertebral block, Lumbar">Paravertebral block, Lumbar</option>
+                    <option value="Intercostobrachial nerve block">Intercostobrachial nerve block</option>
+                    <option value="Serratus anterior nerve block">Serratus anterior nerve block</option>
+                    <option value="Pecs nerve block">Pecs nerve block</option>
+                    <option value="Erector Spinae block">Erector Spinae block</option>
+                    <option value="Quadratus lumborum block">Quadratus lumborum block</option>
+                    <option value="Transversus abdominis block">Transversus abdominis block</option>
+                    <option value="Rectus sheath block">Rectus sheath block</option>
+                    <option value="Ilioinguinal/ilio-hypogastric nerve block">Ilioinguinal/ilio-hypogastric nerve block
+                    </option>
+                    <option value="Fascia iliaca block">Fascia iliaca block</option>
+                    <option value="Femoral nerve block">Femoral nerve block</option>
+                    <option value="Adductor canal neve block">Adductor canal neve block</option>
+                    <option value="Sciatic nerve block">Sciatic nerve block</option>
+                    <option value="Popliteal nerve block">Popliteal nerve block</option>
+                    <option value="Ankle block">Ankle block</option>
+                    <option value="Intravenous regional anaesthesia (Bier’s block)">Intravenous regional anaesthesia
+                        (Bier’s block)</option>
+                    <option value="Eye regional anaesthesia: Retrobulbar/ peribulbar nerve block">Eye regional
+                        anaesthesia: Retrobulbar/ peribulbar nerve block</option> -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="">Technique</label>
+                <select class="form-select technique">
+                    <option disabled selected value> -- select Technique -- </option>
+                    <option *ngFor="let tech of Technique" value="{{tech.Technique}}">{{tech.Technique}}</option>
+
+                    <!-- <option disabled selected value> -- select the Technique -- </option>
+                    <option value="Landmark technique">Landmark technique</option>
+                    <option value="Nerve stimulator">Nerve stimulator</option>
+                    <option value="Ultrasound">Ultrasound</option> -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="">Was a catheter placed?</label>
+                <div class="form-check">
+                    <div class="form-check form-check-inline yesNo">
+                        <input type="radio" name="Catheter" class="form-check-input" id="yesCatheter"><label
+                            for="yesCatheter">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline yesNo">
+                        <input type="radio" name="Catheter" class="form-check-input" id="noCatheter"><label
+                            for="noCatheter">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">Supervision</label>
+                <select class="form-select supervision">
+                    <option disabled selected value> -- Select a Supervision -- </option>
+                    <option *ngFor="let sup of Supervision" value="{{sup.Name}}">{{sup.Name}}</option>
+                    <!-- <option disabled selected value> -- select a Supervision -- </option>
+                    <option value="Immediate">Immediate</option>
+                    <option value="Local">Local</option>
+                    <option value="Distant">Distant</option>
+                    <option value="Solo">Solo</option> -->
                 </select>
 
-            </div>
-        </div>
-        <div class="row py-2">
-            <div class="col">
                 <div class="form-group">
-                    <label for="">Regional anesthesia</label>
-                    <div class="form-check">
-                        <div class="form-check form-check-inline yesNo">
-                            <span (click)="setYes(2)">
-                                <input type="radio" name="Regional" class="form-check-input" id="yesRegional"><label
-                                    for="yesRegional">Yes</label>
-                            </span>
-                        </div>
-                        <div class="form-check form-check-inline yesNo">
-                            <span (click)="setNo(2)">
-                                <input type="radio" name="Regional" class="form-check-input" id="noRegional"><label
-                                    for="noRegional">No</label>
-                            </span>
-                        </div>
-                    </div>
+                    <label for="">Regional notes</label>
+                    <textarea class="form-control event"></textarea>
                 </div>
-            </div>
-
-        </div>
-
-        <div class="row py-2" *ngIf="regional">
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Regional type</label>
-                    <select class="form-select regional form-control">
-                        <option disabled selected value> -- select the type -- </option>
-                        <option *ngFor="let reg of RegionalType" value="reg.ID">{{reg.Procedure}}</option>
-
-                    </select>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Technique</label>
-                    <select class="form-select technique form-control">
-                        <option disabled selected value> -- select Technique -- </option>
-                        <option *ngFor="let tech of Technique" value="{{tech.Technique}}">{{tech.Technique}}</option>
-
-                    </select>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Was a Catheter Placed?</label>
-                    <div class="form-check">
-                        <div class="form-check form-check-inline yesNo">
-                            <input type="radio" name="Catheter" class="form-check-input" id="yesCatheter"><label
-                                for="yesCatheter">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline yesNo">
-                            <input type="radio" name="Catheter" class="form-check-input" id="noCatheter"><label
-                                for="noCatheter">No</label>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 
-        <div class="row py-2">
-            <div class="col">
-                <div class="form-group">
-                    <label for="Procedure">Have you performed one or more procedures?</label>
-                    <div class="form-check">
-                        <div class="form-check form-check-inline yesNo">
-                            <span (click)="setYes(3)">
-                                <input type="radio" name="Procedure" class="form-check-input" id="yesProcedure"><label
-                                    for="yesProcedure">Yes</label>
-                            </span>
-                        </div>
-                        <div class="form-check form-check-inline yesNo">
-                            <span (click)="setNo(3)">
-                                <input type="radio" name="Procedure" class="form-check-input" id="noProcedure"><label
-                                    for="noProcedure">No</label>
-                            </span>
-                        </div>
-                    </div>
+        <div class="form-group">
+            <label for="Procedure">Have you performed one or more procedures?</label>
+            <div class="form-check">
+                <div class="form-check form-check-inline yesNo">
+                    <span (click)="setYes(3)">
+                        <input type="radio" name="Procedure" class="form-check-input" id="yesProcedure"><label
+                            for="yesProcedure">Yes</label>
+                    </span>
                 </div>
-            </div>
-            <div class="col">
-                <div class="form-group" *ngIf="procedure">
-                    <label for="">Procedure</label>
-                    <select #Procedure class="form-select procedure form-control"
-                        (change)="showCategories(Procedure.value)">
-                        <option disabled selected value> -- select a Procedure -- </option>
-                        <option *ngFor="let coreSkill of CoreSkill" value="{{coreSkill.ID}}">{{coreSkill.Skill}}
-                        </option>
-
-                    </select>
+                <div class="form-check form-check-inline yesNo">
+                    <span (click)="setNo(3)">
+                        <input type="radio" name="Procedure" class="form-check-input" id="noProcedure"><label
+                            for="noProcedure">No</label>
+                    </span>
                 </div>
-
             </div>
         </div>
 
+        <div class="form-group" *ngIf="procedure">
+            <label for="">Procedure</label>
+            <select #Procedure class="form-select procedure" (change)="showCategories(Procedure.value)">
+                <option disabled selected value> -- select a Procedure -- </option>
+                <option *ngFor="let coreSkill of CoreSkill" value="{{coreSkill.ID}}">{{coreSkill.Skill}}
+                </option>
+                <!-- <option disabled selected value> -- select a Procedure -- </option>
+                <option value="Airway Management">Airway Management</option>
+                <option value="Breathing">Breathing</option>
+                <option value="Circulation">Circulation</option>
+                <option value="Other procedures">Other procedures</option> -->
+            </select>
+        </div>
 
         <div class="form-group" *ngIf="categories">
             <label for="">Categories</label>
@@ -332,12 +432,12 @@
                             for="noEvent">No</label>
                     </span>
                 </div>
-                <textarea class="form-control event my-2" *ngIf="significantEvent"></textarea>
+                <textarea class="form-control event" *ngIf="significantEvent"></textarea>
             </div>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-dark">Save Log</button>
+            <input type="submit" class="btn btn-dark" value="SaveLog">
         </div>
 
     </form>

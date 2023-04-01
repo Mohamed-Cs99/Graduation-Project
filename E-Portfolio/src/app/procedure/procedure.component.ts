@@ -19,7 +19,7 @@ export class ProcedureComponent {
  constructor(private _ProjectServiceService:ProjectServiceService)
  {
   this._ProjectServiceService.getSharedData().subscribe((data)=>{
-    this.timeData = data.Time;
+      this.timeData = data.Time;
       //console.log(this.timeData);
       this.AgeCategory = data.AgeCategory;
       //console.log(this.AgeCategory);

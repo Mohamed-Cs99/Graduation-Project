@@ -1,5 +1,5 @@
 .con {
-    width: 90%;
+    width: 75%;
     margin: auto;
     h1 {
         margin: 25px 0;
@@ -21,13 +21,13 @@
         .form-check-inline {
             padding: 15px 30px;
             position: relative;
-            width: 265px;
+            width: 300px;
             border-radius: 5px;
             background-color: #b8b9bb;
             transition: .15s ease-in-out;
             label {
                 position: absolute;
-                width: 90%;
+                width: 80%;
                 height: 100%;
                 top: 0;
                 display: flex;
@@ -41,7 +41,9 @@
         .date {
             width: 250px;
         }
-        
+        .time {
+            width: 230px;
+        }
         .facility {
             width: 480px;
         }
@@ -66,7 +68,7 @@
             width: 270px;
         }
         .support {
-            width: 10%;
+            width: 70px;
             label {
                 width: 40%;
             }

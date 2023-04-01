@@ -1,8 +1,8 @@
 <section class="Registeration-sec bg-light py-3">
   <h1 class="text-center mb-4 "><span class="bg-transparent">Registration</span></h1>
   <div class="container w-60 regForm py-5 ">
-    <form class="py-2" [formGroup]='registerForm' (ngSubmit)="submitRegisterForm(registerForm)">
-      <div class="form-row ">
+    <form class="pt-2 " [formGroup]='registerForm' (ngSubmit)="submitRegisterForm(registerForm)">
+      <div class="row py-2 ">
         <div class="col-md-6 form-group-md-4 form-group">
           <label for="Resident_NID">National ID</label>
           <input type="text" class="form-control" formControlName="Resident_NID" id="Resident_NID">
@@ -19,7 +19,7 @@
         </div>
 
       </div>
-      <div class="form-row">
+      <div class="row py-2">
 
         <div class="col-md-6 form-group">
           <label for="Name">Name</label>
@@ -42,7 +42,7 @@
 
       </div>
 
-      <div class="form-row">
+      <div class="row py-2">
         <div class="col-md-6 form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control" formControlName="username" id="username">
@@ -63,7 +63,7 @@
         </div>
 
       </div>
-      <div class="form-row">
+      <div class="row py-2">
         <div class="col-md-6 form-group">
           <label for="password">password</label>
           <input type="password" class="form-control" formControlName="password" id="password">
@@ -88,8 +88,8 @@
         </div>
       </div>
 
-      <div class="form-row">
-        <div class="offset-4 col-md-4 form-group ">
+      <div class="row py-2">
+        <div class="offset-md-4 col-md-4 form-group ">
           <label for="ResidencyYear">Residency Year </label>
           <select ngModel="1" class="form-control" formControlName="ResidencyYear" id="ResidencyYear">
             <option selected value="1">1</option>
@@ -100,10 +100,10 @@
 
         </div>
       </div>
-      <div class="regbtn-div text-center ">
-        <button (click)="alertSuccess()" id="RegistrBtn"  [disabled]="registerForm.invalid" type="submit" class="my-2 btn btn-dark px-5 regbtn btn-lg">SignUp
+      <div class="regbtn-div">
+        <button  id="RegistrBtn"  [disabled]="registerForm.invalid" type="submit" class="d-block m-auto btn btn-dark px-5 regbtn btn-lg">SignUp
         </button>
-        <button (click)="goToLoginPage()" id="loginBtn" type="button" class="ml-5 btn btn-dark px-5 Login-btn btn-lg"> <a>Login</a></button>
+        <button (click)="goToLoginPage()" id="loginBtn" type="button" class="btn d-block m-auto my-4 btn-dark px-5 Login-btn btn-lg"><a>Login</a></button>
       </div>
     </form>
   </div>

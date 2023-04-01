@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IntensiveCareComponent } from './intensive-care/intensive-care.component';
 import { ProcedureComponent } from './procedure/procedure.component';
 import { AnaetheticComponent } from './anaethetic/anaethetic.component';
+import { PendingAccountsListComponent } from './pending-accounts-list/pending-accounts-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AnaetheticComponent } from './anaethetic/anaethetic.component';
     NotfoundComponent,
     IntensiveCareComponent,
     ProcedureComponent,
-    AnaetheticComponent
+    AnaetheticComponent,
+    PendingAccountsListComponent
   ],
   imports: [
     BrowserModule,
