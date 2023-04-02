@@ -16,22 +16,6 @@
                         {{time.Details}}
                     </label>
                 </div>
-                <!-- <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v1"><label for="v1">Morning
-                        [08:00-13:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v2"><label for="v2">Afternoon
-                        [13:00-18:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v3"><label for="v3">Evening
-                        [18:00-22:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v4"><label for="v4">Night
-                        [22:00-08:00]</label>
-                </div> -->
             </div>
         </div>
 
@@ -40,19 +24,6 @@
             <select class="form-select facility">
                 <option disabled selected value> -- select a Facility -- </option>
                 <option *ngFor="let fac of Facility" value="fac.ID">{{fac.Facility_Name}}</option>
-                <!-- <option disabled selected value> -- select a Facility -- </option>
-                <option value="1">Ain Shams University Specialized Hospital; OT</option>
-                <option value="2">Assembled operating theater (OT)</option>
-                <option value="3">Cardiothoracic Academy OT</option>
-                <option value="4">EL Obour Specialized Hospital; OT</option>
-                <option value="5">Emergency OT</option>
-                <option value="6">Endoscopy OT; adult and pediatric</option>
-                <option value="7">Obstetric and gynecological OT</option>
-                <option value="8">Ophthalmic OT</option>
-                <option value="9">Pediatric surgery OT</option>
-                <option value="10">Preoperative assessment clinic</option>
-                <option value="11">Remote areas: Cardiac catheterization</option>
-                <option value="12">Remote areas: Interventional Radiology</option> -->
             </select>
         </div>
 
@@ -79,26 +50,12 @@
                     <select class="form-select">
                         <option disabled selected value> -- Units -- </option>
                         <option *ngFor="let age of AgeUnits" value="{{age.ID}}">{{age.Unit}}</option>
-                        <!-- <option disabled selected value> -- Units -- </option>
-                        <option value="hours">hours</option>
-                        <option value="days">days</option>
-                        <option value="weeks">weeks</option>
-                        <option value="months">months</option>
-                        <option value="years">years</option> -->
                     </select>
                 </div>
                 <div class="form-check form-check-inline age">
                     <select class="form-select">
                         <option disabled selected value> -- select a category -- </option>
-                        <option *ngFor="let ageCat of AgeCategory" value="{{ageCat.ID}}">{{ageCat.Category}}
-                        </option>
-                        <!-- <option disabled selected value> -- select a category -- </option>
-                        <option value="Neonate &lt; 4 weeks">Neonate &lt; 4 weeks</option>
-                        <option value="Infant 1 mos-2 yrs">Infant 1 mos-2 yrs</option>
-                        <option value="Child 2 yrs-12 yrs">Child 2 yrs-12 yrs</option>
-                        <option value="Adolescent 12 yrs-17 yrs">Adolescent 12 yrs-17 yrs</option>
-                        <option value="Adult 18-yrs-64 yrs">Adult 18-yrs-64 yrs</option>
-                        <option value="Geriatrics &gt; 65 yrs">Geriatrics &gt; 65 yrs</option> -->
+                        <option *ngFor="let ageCat of AgeCategory" value="{{ageCat.ID}}">{{ageCat.Category}}</option>
                     </select>
                 </div>
             </div>
@@ -109,13 +66,6 @@
             <select class="form-select supervision">
                 <option disabled selected value> -- select a Category -- </option>
                 <option *ngFor="let spec of Specialty" value="{{spec.ID}}">{{spec.Specialty}}</option>
-                <!-- <option disabled selected value> -- select a Category -- </option>
-                <option value="Anesthesia">Anesthesia</option>
-                <option value="Intensive care">Intensive care</option>
-                <option value="Pain">Pain</option>
-                <option value="Ward">Ward</option>
-                <option value="Emergency">Emergency</option>
-                <option value="Other">Other</option> -->
             </select>
         </div>
 
@@ -123,21 +73,15 @@
             <label for="">Procedure</label>
             <select #Procedure class="form-select procedure" (change)="showCategories(Procedure.value)">
                 <option disabled selected value> -- select a Procedure -- </option>
-                <option *ngFor="let coreSkill of CoreSkill" value="{{coreSkill.ID}}">{{coreSkill.Skill}}
-                </option>
-                <!-- <option disabled selected value> -- select a Procedure -- </option>
-                <option value="Airway Management">Airway Management</option>
-                <option value="Breathing">Breathing</option>
-                <option value="Circulation">Circulation</option>
-                <option value="Other procedures">Other procedures</option> -->
+                <option *ngFor="let coreSkill of CoreSkill" value="{{coreSkill.ID}}">{{coreSkill.Skill}}</option>
             </select>
         </div>
 
         <div class="form-group" *ngIf="categories">
             <label for="">Categories</label>
-            <select class="form-select categories">
+            <select class="form-select categories" multiple>
                 <option disabled selected value> -- select a Category -- </option>
-                <option *ngFor="let category of categories">{{category}}</option>
+                <option *ngFor="let category of categories">{{category.Category}}</option>
             </select>
         </div>
 
@@ -146,11 +90,6 @@
             <select #supervision class="form-select supervision" (change)="showSupervisor(supervision.value)">
                 <option disabled selected value> -- Select a Supervision -- </option>
                 <option *ngFor="let sup of Supervision" value="{{sup.Name}}">{{sup.Name}}</option>
-                <!-- <option disabled selected value> -- select a Supervision -- </option>
-                <option value="Immediate">Immediate</option>
-                <option value="Local">Local</option>
-                <option value="Distant">Distant</option>
-                <option value="Solo">Solo</option> -->
             </select>
         </div>
 
@@ -158,14 +97,7 @@
             <label for="">Supervisor</label>
             <select class="form-select supervision">
                 <option disabled selected value> -- Select a Supervisor Role-- </option>
-                <option *ngFor="let suprole of SupervisorRole" value="{{suprole.Position}}">{{suprole.Position}}
-                </option>
-                <!-- <option disabled selected value> -- select a Supervisor -- </option>
-                <option value="Professor">Professor</option>
-                <option value="Assistant Professor">Assistant Professor</option>
-                <option value="Lecturer">Lecturer</option>
-                <option value="Assistant lecturer">Assistant lecturer</option>
-                <option value="Senior resident">Senior resident</option> -->
+                <option *ngFor="let suprole of SupervisorRole" value="{{suprole.Position}}">{{suprole.Position}}</option>
             </select>
         </div>
 

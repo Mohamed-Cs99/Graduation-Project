@@ -27,7 +27,7 @@
             transition: .15s ease-in-out;
             label {
                 position: absolute;
-                width: 80%;
+                width: 82%;
                 height: 100%;
                 top: 0;
                 display: flex;
@@ -85,7 +85,7 @@
         .modeAnes{
             width: 200px;
             label {
-                width: 75%;
+                width: 76%;
             }
         }
         .regional {
@@ -109,6 +109,10 @@
         .event {
             width: 50%;
             height: 100px;
+        }
+        .others {
+            width: 450px;
+            height: 80px;
         }
     }
 }
