@@ -17,22 +17,6 @@
                         {{time.Details}}
                     </label>
                 </div>
-                <!-- <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v1"><label for="v1">Morning
-                        [08:00-13:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v2"><label for="v2">Afternoon
-                        [13:00-18:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v3"><label for="v3">Evening
-                        [18:00-22:00]</label>
-                </div>
-                <div class="form-check form-check-inline time">
-                    <input type="radio" name="time" class="form-check-input" id="v4"><label for="v4">Night
-                        [22:00-08:00]</label>
-                </div> -->
             </div>
         </div>
 
@@ -41,20 +25,6 @@
             <select class="form-select facility">
                 <option disabled selected value> -- select a Facility -- </option>
                 <option *ngFor="let fac of Facility" value="{{fac.ID}}">{{fac.ICU_Name}}</option>
-                <!-- <option value="El Demerdash Hospital ICU A">El Demerdash Hospital ICU A</option>
-                <option value="El Demerdash Hospital ICU B">El Demerdash Hospital ICU B</option>
-                <option value="El Demerdash Hospital ICU C">El Demerdash Hospital ICU C</option>
-                <option value="Obstetric ICU">Obstetric ICU</option>
-                <option value="Blood diseases ICU">Blood diseases ICU</option>
-                <option value="Burn ICU">Burn ICU</option>
-                <option value="Geriatric ICU">Geriatric ICU</option>
-                <option value="Internal Medicine ICU">Internal Medicine ICU</option>
-                <option value="Cardiac Academy ICU">Cardiac Academy ICU</option>
-                <option value="Ain Shams University Specialized Hospital; ICU A">Ain Shams University Specialized Hospital; ICU A</option>
-                <option value="Ain Shams University Specialized Hospital; ICU B">Ain Shams University Specialized Hospital; ICU B</option>
-                <option value="Ain Shams University Specialized Hospital; ICU C">Ain Shams University Specialized Hospital; ICU C</option>
-                <option value="Ain Shams University Specialized Hospital; Intermediate Care">Ain Shams University Specialized Hospital; Intermediate Care</option>
-                <option value="EL Obour Specialized Hospital, ICU">EL Obour Specialized Hospital, ICU</option> -->
             </select>
         </div>
 
@@ -81,25 +51,12 @@
                     <select class="form-select">
                         <option disabled selected value> -- Units -- </option>
                         <option *ngFor="let age of AgeUnits" value="{{age.ID}}">{{age.Unit}}</option>
-                        <!-- <option disabled selected value> -- Units -- </option>
-                        <option value="hours">hours</option>
-                        <option value="days">days</option>
-                        <option value="weeks">weeks</option>
-                        <option value="months">months</option>
-                        <option value="years">years</option> -->
                     </select>
                 </div>
                 <div class="form-check form-check-inline age">
                     <select class="form-select">
                         <option disabled selected value> -- select a category -- </option>
                         <option *ngFor="let ageCat of AgeCategory" value="{{ageCat.ID}}">{{ageCat.Category}}</option>
-                        <!-- <option disabled selected value> -- select a category -- </option>
-                        <option value="Neonate &lt; 4 weeks">Neonate &lt; 4 weeks</option>
-                        <option value="Infant 1 mos-2 yrs">Infant 1 mos-2 yrs</option>
-                        <option value="Child 2 yrs-12 yrs">Child 2 yrs-12 yrs</option>
-                        <option value="Adolescent 12 yrs-17 yrs">Adolescent 12 yrs-17 yrs</option>
-                        <option value="Adult 18-yrs-64 yrs">Adult 18-yrs-64 yrs</option>
-                        <option value="Geriatrics &gt; 65 yrs">Geriatrics &gt; 65 yrs</option> -->
                     </select>
                 </div>
             </div>
@@ -110,13 +67,6 @@
             <select #specialty class="form-select events">
                 <option disabled selected value> -- Select an Event -- </option>
                 <option *ngFor="let event of Event" value="{{event.ID}}">{{event.Event}}</option>
-                <!-- <option disabled selected value> -- select an Event -- </option>
-                <option value="Ward review">Ward review</option>
-                <option value="Admission">Admission</option>
-                <option value="Rapid Response Team">Rapid Response Team</option>
-                <option value="Code Blue Team">Code Blue Team</option>
-                <option value="Cardiopulmonary resuscitation">Cardiopulmonary resuscitation</option>
-                <option value="Intrahospital Transfer">Intrahospital Transfer</option> -->
             </select>
         </div>
 
@@ -125,33 +75,21 @@
             <select class="form-select specialty">
                 <option disabled selected value> -- Select a Specialty -- </option>
                 <option *ngFor="let spec of Specialty" value="{{spec.ID}}">{{spec.Specialty}}</option>
-                <!-- <option disabled selected value> -- select a Specialty -- </option>
-                <option value="Burn Unit">Burn Unit</option>
-                <option value="Cardiac Surgery">Cardiac Surgery</option>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Dental and oral surgery">Dental and oral surgery</option>
-                <option value="Endoscopy">Endoscopy</option>
-                <option value="ENT">ENT</option>
-                <option value="General surgery">General surgery</option>
-                <option value="Geriatrics">Geriatrics</option>
-                <option value="Hematology">Hematology</option>
-                <option value="Immunology">Immunology</option>
-                <option value="Internal medicine">Internal medicine</option>
-                <option value="Neurology">Neurology</option>
-                <option value="Neurosurgery, Neuroradiology and Neuro Critical Care">Neurosurgery, Neuroradiology and Neuro Critical Care</option>
-                <option value="Obstetrics and gynaecology">Obstetrics and gynaecology</option>
-                <option value="Oncology">Oncology</option>
-                <option value="Ophthalmology">Ophthalmology</option>
-                <option value="Orthopaedic Surgery">Orthopaedic Surgery</option>
-                <option value="Paediatric surgery">Paediatric surgery</option>
-                <option value="Pain interventional therapy">Pain interventional therapy</option>
-                <option value="Plastic surgery">Plastic surgery</option>
-                <option value="Pulmonology">Pulmonology</option>
-                <option value="Thoracic Surgery">Thoracic Surgery</option>
-                <option value="Tropical medicine">Tropical medicine</option>
-                <option value="Urosurgery">Urosurgery</option>
-                <option value="Vascular surgery">Vascular surgery</option> -->
             </select>
+        </div>
+
+        <div class="form-group">
+            <label for="">Primary diagnosis</label>
+            <div class="form-check">
+                <textarea class="form-control event"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Co-morbidities</label>
+            <div class="form-check">
+                <textarea class="form-control event"></textarea>
+            </div>
         </div>
 
         <div class="form-group">
@@ -159,11 +97,6 @@
             <select #supervision class="form-select supervision" (change)="showSupervisor(supervision.value)">
                 <option disabled selected value> -- Select a Supervision -- </option>
                 <option *ngFor="let sup of Supervision" value="{{sup.Name}}">{{sup.Name}}</option>
-                <!-- <option disabled selected value> -- select a Supervision -- </option>
-                <option value="Immediate">Immediate</option>
-                <option value="Local">Local</option>
-                <option value="Distant">Distant</option>
-                <option value="Solo">Solo</option> -->
             </select>
         </div>
 
@@ -171,14 +104,7 @@
             <label for="">Supervisor</label>
             <select class="form-select supervision">
                 <option disabled selected value> -- Select a Supervisor Role-- </option>
-                <option *ngFor="let suprole of SupervisorRole" value="{{suprole.Position}}">{{suprole.Position}}
-                </option>
-                <!-- <option disabled selected value> -- select a Supervisor -- </option>
-                <option value="Professor">Professor</option>
-                <option value="Assistant Professor">Assistant Professor</option>
-                <option value="Lecturer">Lecturer</option>
-                <option value="Assistant lecturer">Assistant lecturer</option>
-                <option value="Senior resident">Senior resident</option> -->
+                <option *ngFor="let suprole of SupervisorRole" value="{{suprole.Position}}">{{suprole.Position}}</option>
             </select>
         </div>
 
@@ -186,40 +112,8 @@
             <label for="">Teaching</label>
             <div class="form-check">
                 <div *ngFor="let tech of Teaching" class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" value="tech.ID" id="tech.ID"><label for="tech.ID">{{tech.Title}}</label>
+                    <input type="radio" name="teaching" class="form-check-input" value="{{tech.ID}}" id="{{tech.Title}}"><label for="{{tech.Title}}">{{tech.Title}}</label>
                 </div>
-                <!-- <div class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" id="house"><label for="house">House
-                        officer</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" id="resident"><label
-                        for="resident">Resident</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" id="fellow"><label
-                        for="fellow">Fellow</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" id="msc"><label for="msc">Postgraduate
-                        student, MSc</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" id="md"><label for="md">Postgraduate
-                        student, MD</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" id="assistant"><label
-                        for="assistant">Assistant lecturer</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" id="consultant"><label
-                        for="consultant">Consultant</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="teaching" class="form-check-input" id="none"><label
-                        for="none">None</label>
-                </div> -->
             </div>
         </div>
 
@@ -254,22 +148,14 @@
             <label for="">Support type</label>
             <select #supportType class="form-select supportType" (change)="showSupportTypeCategories(supportType.value)">
                 <option disabled selected value> -- Select Support Type -- </option>
-                <option *ngFor="let supp of Support" value="{{supp.Support}}">{{supp.Support}}</option>
-                <!-- <option disabled selected value> -- select a type -- </option>
-                <option value="Airway Support">Airway Support</option>
-                <option value="Ventilation Support">Ventilation Support</option>
-                <option value="Cardiovascular Support">Cardiovascular Support</option>
-                <option value="Neurological Support">Neurological Support</option>
-                <option value="Liver Support">Liver Support</option>
-                <option value="Renal Support">Renal Support</option>
-                <option value="Other support">Other support</option> -->
+                <option *ngFor="let supp of Support" value="{{supp.ID}}">{{supp.Support}}</option>
             </select>
         </div>
 
         <div class="form-group" *ngIf="supportCategories">
             <div class="form-check">
                 <div class="form-check form-check-inline supportCategories"  *ngFor="let category of supportCategories">
-                    <input type="checkbox" name="supportType" class="form-check-input" id="{{category}}"><label for="{{category}}">{{category}}</label>
+                    <input type="checkbox" name="supportType" class="form-check-input" id="{{category.Category}}"><label for="{{category.Category}}">{{category.Category}}</label>
                 </div>
             </div>
         </div>
@@ -279,19 +165,14 @@
             <select #Procedure class="form-select procedure" (change)="showCategories(Procedure.value)">
                 <option disabled selected value> -- Select a Procedure -- </option>
                 <option *ngFor="let coreSkill of CoreSkill" value="{{coreSkill.ID}}">{{coreSkill.Skill}}</option>
-                <!-- <option disabled selected value> -- select a Procedure -- </option>
-                <option value="Airway Management">Airway Management</option>
-                <option value="Breathing">Breathing</option>
-                <option value="Circulation">Circulation</option>
-                <option value="Other procedures">Other procedures</option> -->
             </select>
         </div>
 
         <div class="form-group" *ngIf="categories">
             <label for="">Categories</label>
-            <select class="form-select categories">
+            <select class="form-select categories" multiple>
                 <option disabled selected value> -- select a Category -- </option>
-                <option *ngFor="let category of categories">{{category}}</option>
+                <option *ngFor="let category of categories">{{category.Category}}</option>
             </select>
         </div>
 
